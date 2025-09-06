@@ -33,6 +33,7 @@ public class EnemyController : MonoBehaviour
             if (pathIndex == GameManager.instance.paths.Length)
             {
                 Destroy(gameObject);
+                EnemySpawner.onEnemyDestroyed.Invoke();
                 return;
             }
             else
