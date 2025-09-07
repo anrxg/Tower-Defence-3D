@@ -29,8 +29,9 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
+            other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage); //accessing TakeDamage function from Health script
             Destroy(gameObject);
         }
+        Destroy(gameObject);
     }
 }

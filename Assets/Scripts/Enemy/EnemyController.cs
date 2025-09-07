@@ -8,7 +8,7 @@ public class EnemyController : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] float moveSpeed;
-    [SerializeField] float damage;
+    [SerializeField] public float damage;
 
     Transform targetPoint; // the point where the enemy will move next
     int pathIndex = 0;  // current point at which the enemy is present

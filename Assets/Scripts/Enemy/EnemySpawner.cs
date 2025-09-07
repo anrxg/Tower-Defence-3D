@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
     {
         if ((!isSpawning))
             return;
-
+        if (currentWave >= 4) return; // game goes only till wave 3
         timeSinceLastSpawn += Time.deltaTime;
         if (timeSinceLastSpawn >= (1f / enemiesPerSecond) && enemiesLeftToSpawn > 0) //Spawns enemy every seconds if enemiesPerSecond is 0.5f 
         {
@@ -55,8 +55,8 @@ public class EnemySpawner : MonoBehaviour
     void StartWave()
     {
         isSpawning = true;
+        timeSinceLastSpawn = 0f;
         enemiesLeftToSpawn = EnemiesPerWave();
-
     }
 
     int EnemiesPerWave()
@@ -77,10 +77,9 @@ public class EnemySpawner : MonoBehaviour
 
     IEnumerator WaveEnd()
     {
-        yield return new WaitForSeconds(timeBetweenWave);
         isSpawning = false;
-        timeSinceLastSpawn = 0f;
+        yield return new WaitForSeconds(timeBetweenWave);
         currentWave++;
-        StartCoroutine(WaveEnd());
+        StartWave();
     }
 }

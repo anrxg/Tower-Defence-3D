@@ -152,7 +152,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 0}
   moveSpeed: 4
-  damage: 0
+  damage: 15
 --- !u!114 &3882258807687222893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,3 +166,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitPoint: 2
+  earnedPoint: 60
