@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2181268253047830480}
   - component: {fileID: 7459837064060909943}
   - component: {fileID: 1768671223138934765}
+  - component: {fileID: -5956184376981162357}
   m_Layer: 3
   m_Name: BigEnemy
   m_TagString: Enemy
@@ -151,5 +152,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 7459837064060909943}
   moveSpeed: 3
-  health: 100
   damage: 0
+--- !u!114 &-5956184376981162357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6950350980353607812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8099bc65770b5b447bd5070c4c6094c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitPoint: 3

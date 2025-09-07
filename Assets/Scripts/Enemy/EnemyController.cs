@@ -8,7 +8,6 @@ public class EnemyController : MonoBehaviour
 
     [Header("Attributes")]
     [SerializeField] float moveSpeed;
-    [SerializeField] float health = 100;
     [SerializeField] float damage;
 
     Transform targetPoint; // the point where the enemy will move next
@@ -33,7 +32,7 @@ public class EnemyController : MonoBehaviour
             if (pathIndex == GameManager.instance.paths.Length)
             {
                 Destroy(gameObject);
-                EnemySpawner.onEnemyDestroyed.Invoke();
+                EnemySpawner.onEnemyDestroyed.Invoke(); 
                 return;
             }
             else

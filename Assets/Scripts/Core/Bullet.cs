@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
 
     [Header("Refrences")]
     [SerializeField] float bulletSpeed = 50f;
-    [SerializeField] float bulletDamage;
+    [SerializeField] int bulletDamage = 1;
 
     Transform target;
 
@@ -16,7 +16,7 @@ public class Bullet : MonoBehaviour
     {
         if (!target) return;
 
-        Vector3 direction = (target.position - transform.position).normalized;
+        Vector3 direction = (target.position - transform.position).normalized; // get the direction of bullets towards the target
         rb.linearVelocity = direction * bulletSpeed;
     }
 
@@ -29,6 +29,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
+            other.gameObject.GetComponent<Health>().TakeDamage(bulletDamage);
             Destroy(gameObject);
         }
     }
